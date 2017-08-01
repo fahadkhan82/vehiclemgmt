@@ -18,6 +18,9 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	
+	 
+	
 	public function index()
 	{
 		$data['title']='VEHICLE LEASE MANAGEMENT SYSTEM';
@@ -32,7 +35,22 @@ class Welcome extends CI_Controller {
 		$username = $this->input->post('email');
 		$pwd      = $this->input->post('password');
 		
-        $data=verify_password_hash($username,$pwd);    
+        $data=verify_password_hash($username,$pwd); 
+        
+        $info=$data['info'];
+		
+			if($info!=''){
+				
+					$newdata = array(
+						'username'  => $data[0]->username,
+						'role'     =>  $data[0]->role,
+						'fname'     =>  $data[0]->fname,
+						'lname'     =>  $data[0]->lname,
+						'logged_in' => TRUE
+								);			
+                $this->session->set_userdata($newdata);  				
+ 			}  	
+			
 		echo json_encode($data);
 	}
 	
@@ -42,6 +60,19 @@ class Welcome extends CI_Controller {
 		$this->load->view('dashboard',$data);
 		
 	}
+	
+	
+	public function logout()
+	{
+		
+		$this->session->sess_destroy();
+		$data['info']='Logout Successfully!';
+		$data['title']='VEHICLE LEASE MANAGEMENT SYSTEM';
+		$this->load->view('welcome_message',$data);
+		
+	}
+	
+
 	
 	
 }

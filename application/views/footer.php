@@ -4,8 +4,8 @@
         
 	<script type="text/javascript" src="vendors/jquery-validation/dist/jquery.validate.min.js"></script>
 		<script src="assets/form-validation.js"></script>
-               
-        
+            <script src="vendors/datatables/js/jquery.dataTables.min.js"></script>   
+                <script src="assets/DT_bootstrap.js"></script>
        
 	<script src="assets/scripts.js"></script>
 		
