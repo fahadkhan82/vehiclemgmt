@@ -14,45 +14,44 @@ var FormValidation = function () {
                 focusInvalid: false, // do not focus the last invalid input
                 ignore: "",
                 rules: {
-                    name: {
+                    fname: {
                         minlength: 2,
                         required: true
                     },
-                    email: {
-                        required: true,
-                        email: true
-                    },
-					password: {
-                        required: true,
-                    },
-                    url: {
-                        required: true,
-                        url: true
-                    },
-                    number: {
-                        required: true,
-                        number: true
-                    },
-                    digits: {
-                        required: true,
-                        digits: true
-                    },
-                    creditcard: {
-                        required: true,
-                        creditcard: true
-                    },
-                    occupation: {
-                        minlength: 5,
-                    },
-                    category: {
+					 lname: {
+                        minlength: 2,
                         required: true
-                    }
+                    },
+					email: {
+                       email:true,
+                        required: true
+                    },
+			         address: {
+                        minlength: 2,
+                        required: true
+                    }, 
+					  cnic: {
+						
+                        minlength: 15,
+                        required: true
+                    }, 
+					 city: {
+                       
+                        required: true
+                    },
+					 tenure: {
+                        number:true,
+                        required: true
+                    }, 
+					 payment: {
+                       
+                        required: true
+                    }, 
+                  
                 },
 
                 invalidHandler: function (event, validator) { //display error alert on form submit              
-                    //success1.hide();
-					//error1.append('Fill required fields');
-                   // error1.show();
+                  
                     FormValidation.scrollTo(error1, -200);
 					
 					
@@ -78,6 +77,7 @@ var FormValidation = function () {
                 },
 
                 submitHandler: function (form) {
+					form.submit();
                     //success1.show();
                    /// error1.hide();
 					
@@ -104,3 +104,4 @@ var FormValidation = function () {
     };
 
 }();
+

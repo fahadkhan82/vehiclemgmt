@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 
 <?php $this->view('header_inner'); ?>
+<script>	
+	jQuery(document).ready(function() {   
+	   FormValidation.init();
+	});
+	
+</script>  
   <body>
           <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
@@ -15,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Vincent Gabriel <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> <?php echo $_SESSION['fname']?> <?php echo $_SESSION['lname']?><i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
@@ -24,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a tabindex="-1" href="login.html">Logout</a>
+                                        <a tabindex="-1" href="welcome/logout">Logout</a>
                                     </li>
                                 </ul>
                             </li>
@@ -48,12 +54,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Form Validation</div>
+                                <div class="muted pull-left">Client Management</div>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
 					<!-- BEGIN FORM-->
-					<form action="#" id="form_sample_1" class="form-horizontal">
+					<form action="client/saveClient" id="form_sample_1" class="form-horizontal" method="post">
 						<fieldset>
 							<div class="alert alert-error hide">
 								<button class="close" data-dismiss="alert"></button>
@@ -64,64 +70,88 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								Your form validation is successful!
 							</div>
   							<div class="control-group">
-  								<label class="control-label">Name<span class="required">*</span></label>
+  								<label class="control-label">First Name<span class="required">*</span></label>
   								<div class="controls">
-  									<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+  									<input type="text" name="fname" id="fname" data-required="1" class="span6 m-wrap"/>
   								</div>
   							</div>
-  							<div class="control-group">
+							<div class="control-group">
+  								<label class="control-label">Last Name<span class="required">*</span></label>
+  								<div class="controls">
+  									<input type="text" name="lname" id="lname" data-required="1" class="span6 m-wrap"/>
+  								</div>
+  							</div>
+							
+							<div class="control-group">
   								<label class="control-label">Email<span class="required">*</span></label>
   								<div class="controls">
-  									<input name="email" type="text" class="span6 m-wrap"/>
+  									<input type="text" name="email" id="email" data-required="1" class="span6 m-wrap"/>
+  								</div>
+  							</div>
+							
+							<div class="control-group">
+  								<label class="control-label">Address<span class="required">*</span></label>
+  								<div class="controls">
+  									<textarea  name="address" id="address" data-required="1" class="span6 m-wrap"/></textarea>
+  								</div>
+  							</div>
+							
+  							<div class="control-group">
+  								<label class="control-label">CNIC<span class="required">*</span></label>
+  								<div class="controls">
+  									<input name="cnic"  id="cnic" type="text" class="span6 m-wrap"/>
   								</div>
   							</div>
   							<div class="control-group">
-  								<label class="control-label">URL<span class="required">*</span></label>
+  								<label class="control-label">City<span class="required">*</span></label>
   								<div class="controls">
-  									<input name="url" type="text" class="span6 m-wrap"/>
-  									<span class="help-block">e.g: http://www.demo.com or http://demo.com</span>
+  									<select class="span6 m-wrap" name="city" id="city"> 
+									<option value="">Choose City</option>
+									<option value="islamabad">Islamabad</option>
+									<option value="rawalpindi">Rawalpindi</option>
+									<option value="lahore">Lahore</option>
+									<option value="faisalabad">Faisalabad</option>
+									<option value="karachi">Karachi</option>
+									</select>
+  									<!--<span class="help-block">e.g: http://www.demo.com or http://demo.com</span>-->
   								</div>
   							</div>
   							<div class="control-group">
-  								<label class="control-label">Number<span class="required">*</span></label>
+  								<label class="control-label">Agreement Tenure<span class="required">*</span></label>
   								<div class="controls">
-  									<input name="number" type="text" class="span6 m-wrap"/>
+  									<input name="tenure" id="tenure" type="text" class="span6 m-wrap"/>
+  								</div>
+  							</div>
+							<div class="control-group">
+  								<label class="control-label">Payment Method<span class="required">*</span></label>
+  								<div class="controls">
+  									<select class="span6 m-wrap" name="payment" id="payment"> 
+									<option value="">Select Method</option>
+									<option value="cash">Cash</option>
+									<option value="cheque">Cheque</option>
+									<option value="account">Account Transfer</option>
+									
+									</select>
+  									<!--<span class="help-block">e.g: http://www.demo.com or http://demo.com</span>-->
   								</div>
   							</div>
   							<div class="control-group">
-  								<label class="control-label">Digits<span class="required">*</span></label>
+  								<label class="control-label">Account Number</label>
   								<div class="controls">
-  									<input name="digits" type="text" class="span6 m-wrap"/>
+  									<input name="account" id="account" type="text" class="span6 m-wrap"/>
   								</div>
   							</div>
-  							<div class="control-group">
-  								<label class="control-label">Credit Card<span class="required">*</span></label>
-  								<div class="controls">
-  									<input name="creditcard" type="text" class="span6 m-wrap"/>
-  									<span class="help-block">e.g: 5500 0000 0000 0004</span>
-  								</div>
-  							</div>
+  							
   							<div class="control-group">
   								<label class="control-label">Occupation&nbsp;&nbsp;</label>
   								<div class="controls">
-  									<input name="occupation" type="text" class="span6 m-wrap"/>
-  									<span class="help-block">optional field</span>
+  									<input name="occupation" id="occupation" type="text" class="span6 m-wrap"/>
+  									
   								</div>
   							</div>
-  							<div class="control-group">
-  								<label class="control-label">Category<span class="required">*</span></label>
-  								<div class="controls">
-  									<select class="span6 m-wrap" name="category">
-  										<option value="">Select...</option>
-  										<option value="Category 1">Category 1</option>
-  										<option value="Category 2">Category 2</option>
-  										<option value="Category 3">Category 5</option>
-  										<option value="Category 4">Category 4</option>
-  									</select>
-  								</div>
-  							</div>
+  							
   							<div class="form-actions">
-  								<button type="submit" class="btn btn-primary">Validate</button>
+  								<button type="submit" class="btn btn-primary">Submit</button>
   								<button type="button" class="btn">Cancel</button>
   							</div>
 						</fieldset>
@@ -132,7 +162,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
                      	<!-- /block -->
 		    </div>
-                     <!-
+
                 </div>
             </div>
            

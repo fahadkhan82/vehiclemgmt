@@ -47,13 +47,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Client Management</div>
+                                <div class="muted pull-left">Vehicle Management</div>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
                                    <div class="table-toolbar">
                                       <div class="btn-group">
-                                         <a href="#"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
+                                         <a href="vehicle/add"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
                                       </div>
                                      <!-- <div class="btn-group pull-right">
                                          <button data-toggle="dropdown" class="btn dropdown-toggle">Tools <span class="caret"></span></button>

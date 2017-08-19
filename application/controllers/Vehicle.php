@@ -28,9 +28,32 @@ class Vehicle extends CI_Controller {
 		
 	}
 	
-	
+	public function add()
+	{
+		$data['title']='Vehicle Management';
+		$this->load->view('vehicle/add_vehicle',$data);
+		
+	}
 	
 
+		public function listAllVehicles() 
+	{
 	
+		$data   = array();
+        $data['result'] = $this->Client_model->getallVehicles();
+        $this->load->view('client/client', $data);
+
+	
+	}
+	
+		public function listVehiclebyID() 
+	{
+	
+		$data   = array();
+        $data['result'] = $this->Client_model->getClientsData();
+        $this->load->view('client/client', $data);
+
+	
+	}
 	
 }
