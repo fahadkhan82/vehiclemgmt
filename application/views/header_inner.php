@@ -18,6 +18,7 @@ if($_SESSION['logged_in']!=TRUE){
         <link href="assets/styles.css" rel="stylesheet" media="screen">
         <link href="vendors/jGrowl/jquery.jgrowl.css" rel="stylesheet" media="screen">
 		<link href="assets/DT_bootstrap.css" rel="stylesheet" media="screen">
+       <link href="vendors/chosen.min.css" rel="stylesheet" media="screen">
      <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,5 +26,6 @@ if($_SESSION['logged_in']!=TRUE){
 	 <script src="vendors/jquery-1.9.1.min.js"></script>
     <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
      <script src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+      <script src="vendors/chosen.jquery.min.js"></script>
   </head>
   

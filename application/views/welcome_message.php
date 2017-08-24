@@ -70,7 +70,7 @@ $(document).ready(function() {
   <body id="login">
     <div class="container">
       
-      <form  action="#" class="form-signin" id="form_sample_1">
+      <form  action="#" class="form-signin" id="form_sample_1" method="post">
 	  
         		<div class="loader" style="display: none"></div>    
 		<fieldset>		

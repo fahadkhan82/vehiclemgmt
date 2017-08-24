@@ -2,20 +2,20 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 
-<?php $this->view('header_inner'); ?>
+<?php $this->view('./header_inner'); ?>
   <body>
-          <div class="navbar navbar-fixed-top">
+        <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </a>
                     <a class="brand" href="#">Admin Panel</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Vincent Gabriel <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> <?php echo $_SESSION['fname']?> <?php echo $_SESSION['lname']?><i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
@@ -24,14 +24,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a tabindex="-1" href="login.html">Logout</a>
+                                        <a tabindex="-1" href="welcome/logout">Logout</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
-						 <?php $this->view('top_menu'); ?>
-                  
-                                    </div>
+                        <?php $this->view('top_menu'); ?>
+
+                    </div>
                     <!--/.nav-collapse -->
                 </div>
             </div>
@@ -84,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <td><?php echo $r->city; ?></td>
                                                 <td ><?php echo $r->cnic; ?></td>
                                                 <td ><?php echo $r->tenure; ?></td>
-												<td ><a href="<?php echo $r->tenure; ?>">View</a> | <a href="<?php echo $r->tenure; ?>">Edit</a> | <a href="<?php echo $r->tenure; ?>">Delete</a> | <a href="vehicle?cid=<?php echo $r->id; ?>">Vehicles</a></td>
+												<td ><a href="<?php echo $r->tenure; ?>">View</a> | <a href="<?php echo $r->tenure; ?>">Edit</a> | <a href="<?php echo $r->tenure; ?>">Delete</a> | <a href="vehicle/listVehiclebyID?cid=<?php echo $r->id; ?>">Vehicles</a></td>
                                             </tr>
                                         <?php endforeach; ?>    
                                         </tbody>

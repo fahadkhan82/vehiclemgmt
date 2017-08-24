@@ -24,13 +24,16 @@ class Client extends CI_Controller {
                 parent::__construct();
 				$this->load->model('Client_model');
                 // Your own constructor code
+		       // $this->output->enable_profiler(true); 		
         }
 	
 	public function index()
 	{
+	
 		$data   = array();
         $data['result'] = $this->Client_model->getClientsData();
 		$data['title']='Client Management';
+		
 		$this->load->view('client/client',$data);
 		
 	}
@@ -71,6 +74,7 @@ class Client extends CI_Controller {
 		$this->Client_model->saveClientData($data);
 		$data['message'] = 'Data Inserted Successfully';
 		$data['title']='Client Management';
+		$data['result'] = $this->Client_model->getClientsData();
 		$this->load->view('client/client',$data);
 		
 	}
@@ -81,6 +85,7 @@ class Client extends CI_Controller {
 	
 		$data   = array();
         $data['result'] = $this->Client_model->getClientsData();
+		
         $this->load->view('client/client', $data);
 
 	

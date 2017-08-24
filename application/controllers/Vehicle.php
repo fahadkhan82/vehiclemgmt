@@ -18,9 +18,16 @@ class Vehicle extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	
-	 
-	
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Vehicle_model');
+        // Your own constructor code
+        //$this->output->enable_profiler(true);
+    }
+
 	public function index()
 	{
 		$data['title']='Vehicle Management';
@@ -34,24 +41,34 @@ class Vehicle extends CI_Controller {
 		$this->load->view('vehicle/add_vehicle',$data);
 		
 	}
-	
 
-		public function listAllVehicles() 
-	{
-	
-		$data   = array();
-        $data['result'] = $this->Client_model->getallVehicles();
-        $this->load->view('client/client', $data);
+    public function saveVehicle()
+    {
 
-	
-	}
-	
-		public function listVehiclebyID() 
-	{
-	
-		$data   = array();
+        $data = array(
+            'cid' => $this->input->post('cid'),
+            'model' => $this->input->post('model'),
+            'make' => $this->input->post('make'),
+            'year' => $this->input->post('year'),
+            'type' => $this->input->post('type'),
+        );
+
+        //Transfering data to Model
+        $this->Client_model->saveClientData($data);
+        $data['message'] = 'Data Inserted Successfully';
+        $data['title']='Client Management';
         $data['result'] = $this->Client_model->getClientsData();
-        $this->load->view('client/client', $data);
+        $this->load->view('client/client',$data);
+
+    }
+
+	public function listVehiclebyID() 
+	{
+	
+		$cid=$this->input->get('cid');
+		$data['result'] = $this->Vehicle_model->getVehicleList($cid);
+        $data['title']='Vehicle Management';
+		$this->load->view('vehicle/vehicle', $data);
 
 	
 	}
