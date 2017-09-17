@@ -30,6 +30,9 @@ class Vehicle extends CI_Controller {
 
 	public function index()
 	{
+		
+		$cid=$_SESSION['id'];
+		$data['result'] = $this->Vehicle_model->getVehicleList($cid);
 		$data['title']='Vehicle Management';
 		$this->load->view('vehicle/vehicle',$data);
 		
@@ -58,7 +61,9 @@ class Vehicle extends CI_Controller {
         $data['message'] = 'Data Inserted Successfully';
         $data['title']='Client Management';
         //$data['result'] = $this->Vehicle_model->getClientsData();
-        $this->load->view('vehicle/add_vehicle',$data);
+        $cid= $this->input->post('client');
+		$data['result'] = $this->Vehicle_model->getVehicleList($cid);
+		$this->load->view('vehicle/vehicle', $data);
 
     }
 

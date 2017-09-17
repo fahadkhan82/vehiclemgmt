@@ -72,6 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <th>Last Name</th>
                                                 <th>City</th>
                                                 <th>CNIC</th>
+												<th>Client-id</th>
                                                 <th>Tenure</th>
 												<th>Action</th>
                                             </tr>
@@ -83,6 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <td><?php echo $r->lname; ?></td>
                                                 <td><?php echo $r->city; ?></td>
                                                 <td ><?php echo $r->cnic; ?></td>
+												<td ><?php echo $r->id; ?></td>
                                                 <td ><?php echo $r->tenure; ?></td>
 												<td ><a href="<?php echo $r->tenure; ?>">View</a> | <a href="<?php echo $r->tenure; ?>">Edit</a> | <a href="<?php echo $r->tenure; ?>">Delete</a> | <a href="vehicle/listVehiclebyID?cid=<?php echo $r->id; ?>">Vehicles</a></td>
                                             </tr>

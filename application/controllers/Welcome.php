@@ -43,6 +43,7 @@ class Welcome extends CI_Controller {
 				
 					$newdata = array(
 						'username'  => $data[0]->username,
+						'id'  => $data[0]->id,
 						'role'     =>  $data[0]->role,
 						'fname'     =>  $data[0]->fname,
 						'lname'     =>  $data[0]->lname,

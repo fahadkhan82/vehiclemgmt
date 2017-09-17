@@ -136,12 +136,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   								</div>
   							</div>
   							<div class="control-group">
-  								<label class="control-label">Account Number</label>
+  								<label class="control-label">Primary Account Number</label>
   								<div class="controls">
   									<input name="account" id="account" type="text" class="span6 m-wrap"/>
   								</div>
   							</div>
-  							
+  							<div class="control-group">
+  								<label class="control-label">Secondary Account Number</label>
+  								<div class="controls">
+  									<input name="accountsec" id="accountsec" type="text" class="span6 m-wrap"/>
+  								</div>
+  							</div>
   							<div class="control-group">
   								<label class="control-label">Occupation&nbsp;&nbsp;</label>
   								<div class="controls">

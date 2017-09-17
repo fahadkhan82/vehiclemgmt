@@ -66,6 +66,7 @@ class Client extends CI_Controller {
 			'tenure' => $this->input->post('tenure'),
 			'payment' => $this->input->post('payment'),
 			'account' => $this->input->post('account'),
+			'accountsec' => $this->input->post('accountsec'),
 			'occupation' => $this->input->post('occupation'),
 			'cnic' => $this->input->post('cnic')
 			);
