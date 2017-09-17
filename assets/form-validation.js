@@ -8,6 +8,10 @@ var FormValidation = function () {
             var error1 = $('.alert-error', form1);
             var success1 = $('.alert-success', form1);
 
+
+
+
+
             form1.validate({
                 errorElement: 'span', //default input error message container
                 errorClass: 'help-inline', // default input error message class
@@ -46,8 +50,31 @@ var FormValidation = function () {
 					 payment: {
                        
                         required: true
-                    }, 
-                  
+                    },
+                    client: {
+
+                        required: true
+                    },
+
+                    make: {
+
+                        required: true
+                    },
+                    model: {
+
+                        required: true
+                    },
+                    year: {
+
+                        required: true
+                    },
+
+                    type: {
+
+                        required: true
+                    },
+
+
                 },
 
                 invalidHandler: function (event, validator) { //display error alert on form submit              

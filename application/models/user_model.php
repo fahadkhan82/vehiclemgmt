@@ -17,4 +17,13 @@ class User_model extends CI_Model {
 
 		}
 
+    public function client_list(){
+
+
+        $userdetails = $this->db->query("SELECT * FROM cmsusers");
+
+        return $userdetails->result();
+
+    }
+
 }

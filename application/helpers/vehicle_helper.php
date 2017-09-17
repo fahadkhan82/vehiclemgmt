@@ -30,4 +30,13 @@ if ( ! function_exists('calculate_password_hash'))
     }
     return $randomString;
    }
+
+   function get_client_list(){
+
+       $CI = get_instance();
+       $CI->load->model('User_model');
+       $data=$CI->User_model->client_list();
+       return $data;
+
+   }
 }

@@ -46,7 +46,7 @@ class Vehicle extends CI_Controller {
     {
 
         $data = array(
-            'cid' => $this->input->post('cid'),
+            'cid' => $this->input->post('client'),
             'model' => $this->input->post('model'),
             'make' => $this->input->post('make'),
             'year' => $this->input->post('year'),
@@ -54,11 +54,11 @@ class Vehicle extends CI_Controller {
         );
 
         //Transfering data to Model
-        $this->Client_model->saveClientData($data);
+        $this->Vehicle_model->saveVehicletData($data);
         $data['message'] = 'Data Inserted Successfully';
         $data['title']='Client Management';
-        $data['result'] = $this->Client_model->getClientsData();
-        $this->load->view('client/client',$data);
+        //$data['result'] = $this->Vehicle_model->getClientsData();
+        $this->load->view('vehicle/add_vehicle',$data);
 
     }
 
