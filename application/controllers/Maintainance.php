@@ -49,6 +49,13 @@ class Maintainance extends CI_Controller {
 		$this->load->view('vehicle/vehicle', $data);
 	}
 
-	
+	public function add()
+	{
+		
+		
+		$data['title']='Vehicle Maintainance';
+		$this->load->view('maintainance/add_maintainance',$data);
+		
+	}
 	
 }

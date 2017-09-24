@@ -84,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <td><?php echo $r->year; ?></td>
                                                 <td><?php echo $r->type; ?></td>
                                                 <td ><?php echo $r->cid; ?>-<?php echo $r->fname; ?>&nbsp;<?php echo $r->lname; ?></td>
-                                                <td ><a href="<?php echo $r->id; ?>">Add Maintainanace Record</a> </td>
+                                                <td ><a href="maintainance/add?vid=<?php echo $r->id; ?>">Add Maintainanace Record</a> </td>
                                             </tr>
                                         <?php endforeach; ?>
                                         </tbody>
