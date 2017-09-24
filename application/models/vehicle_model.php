@@ -18,7 +18,14 @@ class Vehicle_model extends CI_Model {
 			return $query->result();
 			
 		}
-
+		
+		
+         
+		public function saveVehicletData($data){
+			
+			$this->db->insert('vehicle',$data);
+			
+		} 
     
 
 }

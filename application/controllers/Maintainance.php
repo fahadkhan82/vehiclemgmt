@@ -21,15 +21,33 @@ class Maintainance extends CI_Controller {
 	
 	 
 	
+	
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Maintainance_model');
+        // Your own constructor code
+        //$this->output->enable_profiler(true);
+    }
+	
+	
 	public function index()
 	{
+		
+		$data['result'] = $this->Maintainance_model->getAllVehicleList();
 		$data['title']='Vehicle Maintainance';
 		$this->load->view('maintainance/maintainance',$data);
 		
 	}
 	
 	
-	
+	public function listVehiclebyID(){
+		
+		$cid=$_SESSION['id'];
+		$data['result'] = $this->Maintainance_model->getVehicleList($cid);
+        $data['title']='Vehicle Management';
+		$this->load->view('vehicle/vehicle', $data);
+	}
 
 	
 	
