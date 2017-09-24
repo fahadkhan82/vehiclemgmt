@@ -39,4 +39,13 @@ if ( ! function_exists('calculate_password_hash'))
        return $data;
 
    }
+   
+   function get_vehicle_rec($vid){
+	   $CI = get_instance();
+       $CI->load->model('Maintainance_model');
+       $data=$CI->Maintainance_model->vehicle_rec($vid);
+       return $data;
+   }
+   
+   
 }

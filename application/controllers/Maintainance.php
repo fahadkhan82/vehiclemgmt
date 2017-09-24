@@ -58,4 +58,13 @@ class Maintainance extends CI_Controller {
 		
 	}
 	
+	public function addRecord()
+	{
+		
+		
+		$data['title']='Vehicle Maintainance';
+		$this->load->view('maintainance/add_maintainance',$data);
+		
+	}
+	
 }

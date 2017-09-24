@@ -73,6 +73,11 @@ var FormValidation = function () {
 
                         required: true
                     },
+					
+					veh_type: {
+
+                        required: true
+                    },
 
 
                 },
