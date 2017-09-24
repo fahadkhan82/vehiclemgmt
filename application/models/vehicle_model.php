@@ -11,10 +11,12 @@ class Vehicle_model extends CI_Model {
 		public function getVehicleList($cid){
 			
 		
-			$vehdetails = $this->db->query("SELECT * FROM vehicle WHERE cid = '$cid'");
+			$this->db->select("*");
+			$this->db->from('cmsusers');
+			$this->db->join('vehicle', 'vehicle.cid=cmsusers.id and vehicle.cid='.$cid);
+			$query = $this->db->get();
+			return $query->result();
 			
-			return $vehdetails->result();
-
 		}
 
     
