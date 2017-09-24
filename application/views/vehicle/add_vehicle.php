@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php $this->view('header_inner'); ?>
 <script>	
 	jQuery(document).ready(function() {   
+	$(".chzn-select").chosen();
 	   FormValidation.init();
 	});
 	
@@ -54,12 +55,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Client Management</div>
+                                <div class="muted pull-left">Add New Vehicle</div>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
 					<!-- BEGIN FORM-->
-					<form action="client/saveClient" id="form_sample_1" class="form-horizontal" method="post">
+					<form action="vehicle/saveVehicle" id="form_sample_1" class="form-horizontal" method="post">
 						<fieldset>
 							<div class="alert alert-error hide">
 								<button class="close" data-dismiss="alert"></button>
@@ -69,91 +70,54 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<button class="close" data-dismiss="alert"></button>
 								Your form validation is successful!
 							</div>
+							<?php
+							       $clients=get_client_list();
+								   
+							?>
   							<div class="control-group">
-  								<label class="control-label">First Name<span class="required">*</span></label>
-  								<div class="controls">
-  									<input type="text" name="fname" id="fname" data-required="1" class="span6 m-wrap"/>
-  								</div>
-  							</div>
+                                          <label class="control-label" for="client">Select Client</label>
+                                          <div class="controls">
+                                            <select id="client" name="client" class="chzn-select">
+                                              <?php foreach($clients  as $r) { ?>
+											  <option value='<?php echo $r->id; ?>'><?php echo $r->id; ?>-<?php echo $r->fname; ?> <?php echo $r->lname; ?></option>
+											  <?php } ?>
+                                            </select>
+                                          </div>
+                            </div>
 							<div class="control-group">
-  								<label class="control-label">Last Name<span class="required">*</span></label>
+  								<label class="control-label">Model<span class="required">*</span></label>
   								<div class="controls">
-  									<input type="text" name="lname" id="lname" data-required="1" class="span6 m-wrap"/>
+  									<input type="text" name="model" id="model" data-required="1" class="span6 m-wrap"/>
   								</div>
   							</div>
 							
 							<div class="control-group">
-  								<label class="control-label">Email<span class="required">*</span></label>
+  								<label class="control-label">Make<span class="required">*</span></label>
   								<div class="controls">
-  									<input type="text" name="email" id="email" data-required="1" class="span6 m-wrap"/>
+  									<input type="text" name="make" id="make" data-required="1" class="span6 m-wrap"/>
   								</div>
   							</div>
 							
-							<div class="control-group">
-  								<label class="control-label">Address<span class="required">*</span></label>
+						
+							
+  							<div class="control-group">
+  								<label class="control-label">Year<span class="required">*</span></label>
   								<div class="controls">
-  									<textarea  name="address" id="address" data-required="1" class="span6 m-wrap"/></textarea>
+  									<input name="year"  id="year" type="text" class="span6 m-wrap"/>
+  								</div>
+  							</div>
+  						
+  								
+  							
+  							
+  							<div class="control-group">
+  								<label class="control-label">Type<span class="required">*</span></label>
+  								<div class="controls">
+  									<input name="type" id="type" type="text" class="span6 m-wrap"/>
   								</div>
   							</div>
 							
-  							<div class="control-group">
-  								<label class="control-label">CNIC<span class="required">*</span></label>
-  								<div class="controls">
-  									<input name="cnic"  id="cnic" type="text" class="span6 m-wrap"/>
-  								</div>
-  							</div>
-  							<div class="control-group">
-  								<label class="control-label">City<span class="required">*</span></label>
-  								<div class="controls">
-  									<select class="span6 m-wrap" name="city" id="city"> 
-									<option value="">Choose City</option>
-									<option value="islamabad">Islamabad</option>
-									<option value="rawalpindi">Rawalpindi</option>
-									<option value="lahore">Lahore</option>
-									<option value="faisalabad">Faisalabad</option>
-									<option value="karachi">Karachi</option>
-									</select>
-  									<!--<span class="help-block">e.g: http://www.demo.com or http://demo.com</span>-->
-  								</div>
-  							</div>
-  							<div class="control-group">
-  								<label class="control-label">Agreement Tenure<span class="required">*</span></label>
-  								<div class="controls">
-  									<input name="tenure" id="tenure" type="text" class="span6 m-wrap"/>
-  								</div>
-  							</div>
-							<div class="control-group">
-  								<label class="control-label">Payment Method<span class="required">*</span></label>
-  								<div class="controls">
-  									<select class="span6 m-wrap" name="payment" id="payment"> 
-									<option value="">Select Method</option>
-									<option value="cash">Cash</option>
-									<option value="cheque">Cheque</option>
-									<option value="account">Account Transfer</option>
-									
-									</select>
-  									<!--<span class="help-block">e.g: http://www.demo.com or http://demo.com</span>-->
-  								</div>
-  							</div>
-  							<div class="control-group">
-  								<label class="control-label">Primary Account Number</label>
-  								<div class="controls">
-  									<input name="account" id="account" type="text" class="span6 m-wrap"/>
-  								</div>
-  							</div>
-  							<div class="control-group">
-  								<label class="control-label">Secondary Account Number</label>
-  								<div class="controls">
-  									<input name="accountsec" id="accountsec" type="text" class="span6 m-wrap"/>
-  								</div>
-  							</div>
-  							<div class="control-group">
-  								<label class="control-label">Occupation&nbsp;&nbsp;</label>
-  								<div class="controls">
-  									<input name="occupation" id="occupation" type="text" class="span6 m-wrap"/>
-  									
-  								</div>
-  							</div>
+  							
   							
   							<div class="form-actions">
   								<button type="submit" class="btn btn-primary">Submit</button>
