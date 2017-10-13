@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
                  <!-- validation -->
                     <div class="row-fluid">
-                         <!-- block -->
+                         <!-- block --> 
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
                                 <div class="muted pull-left">Add New Maintainance Record</div>
@@ -129,11 +129,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 													 <option value='Check Brake Discs/Drums, and replace'>Check Brake Discs/Drums, and replace</option>
 													  <option value='Check & refill power steering fluid'>Check & refill power steering fluid</option>
 													   <option value='Check & refill Automatic/Manual Transmission Fluid'>Check & refill Automatic/Manual Transmission Fluid</option>
+													   <option value='Denting'>Denting</option>
+													   <option value='Denting'>Painting</option>
 											  
                                      </select>
   								</div>
   							</div>
-							
+							<div class="control-group">
+  								<label class="control-label">Cost</label>
+  								<div class="controls">
+  									<input name="engine" id="engine" type="text" class="span6 m-wrap" data-required="1"/>
+  								</div>
+  							</div>	
+  							
   							
   							
   							<div class="form-actions">

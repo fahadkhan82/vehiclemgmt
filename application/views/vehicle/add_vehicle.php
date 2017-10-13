@@ -117,7 +117,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   								</div>
   							</div>
 							
-  							
+  							<div class="control-group">
+  								<label class="control-label">Engine Capicty<span class="required">*</span></label>
+  								<div class="controls">
+  									<input name="engine" id="engine" type="text" class="span6 m-wrap" data-required="1"/>
+  								</div>
+  							</div>
+							
+							<div class="control-group">
+  								<label class="control-label">Transmission<span class="required">*</span></label>
+  								<div class="controls">
+  									    <select id="transmission" name="transmission" class="chzn-select required">
+                                        <option>Select</option>
+										<option value='automatic'>Automatic</option>
+									    <option value='manual'>Manual</option>
+										</select>  								
+										</div>
+  							</div>
   							
   							<div class="form-actions">
   								<button type="submit" class="btn btn-primary">Submit</button>

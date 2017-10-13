@@ -78,6 +78,16 @@ var FormValidation = function () {
 
                         required: true
                     },
+					
+					engine: {
+
+                        required: true
+                    },
+					
+					transmission: {
+
+                        required: true
+                    },
 
 
                 },

@@ -54,6 +54,8 @@ class Vehicle extends CI_Controller {
             'make' => $this->input->post('make'),
             'year' => $this->input->post('year'),
             'type' => $this->input->post('type'),
+			'engine' => $this->input->post('engine'),
+			'transmission' => $this->input->post('transmission'),
         );
 
         //Transfering data to Model
