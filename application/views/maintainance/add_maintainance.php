@@ -71,7 +71,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								Your form validation is successful!
 							</div>
 							<?php
+							      $vidp = $this->input->post('vid');
                                   $vid = $this->input->get('vid');							      
+								  if (isset($vidp)){
+									  $vid =$this->input->post('vid');
+								  }							      
 								  $veh=get_vehicle_rec($vid);
 								   
 							?>
@@ -79,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                           <label class="control-label" for="client">Vehicle-ID</label>
                                           <div class="controls">
                                             <?php echo $veh[0]->id?>
-											<input type="hidden" id="vid" name="vid" value="$veh[0]->id">
+											<input type="hidden" id="vid" name="vid" value="<?php echo $vid?>">
                                           </div>
                             </div>
 							<div class="control-group">
@@ -116,7 +120,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   							<div class="control-group">
   								<label class="control-label">Maintainance Type<span class="required">*</span></label>
   								<div class="controls">
-  									 <select id="veh_type" name="veh_type" class="chzn-select">
+  									 <select id="maint_type" name="maint_type" class="chzn-select">
                                               
 											  <option value=''>Select</option>
 											  <option value='Change the engine oil'>Change the engine oil</option>
@@ -130,7 +134,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 													  <option value='Check & refill power steering fluid'>Check & refill power steering fluid</option>
 													   <option value='Check & refill Automatic/Manual Transmission Fluid'>Check & refill Automatic/Manual Transmission Fluid</option>
 													   <option value='Denting'>Denting</option>
-													   <option value='Denting'>Painting</option>
+													   <option value='Painting'>Painting</option>
 											  
                                      </select>
   								</div>
@@ -138,7 +142,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="control-group">
   								<label class="control-label">Cost</label>
   								<div class="controls">
-  									<input name="engine" id="engine" type="text" class="span6 m-wrap" data-required="1"/>
+  									<input name="cost" id="cost" type="text" class="span6 m-wrap" data-required="1"/>
   								</div>
   							</div>	
   							
@@ -146,7 +150,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   							
   							<div class="form-actions">
   								<button type="submit" class="btn btn-primary">Submit & Add Another</button>
-  								<button type="button" class="btn">Back to main</button>
+  								<button type="button" class="btn" onclick="window.open('maintainance','_self')">Back to main</button>
   							</div>
 						</fieldset>
 					</form>

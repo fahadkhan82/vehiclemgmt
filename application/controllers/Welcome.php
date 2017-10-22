@@ -69,7 +69,7 @@ class Welcome extends CI_Controller {
 		$this->session->sess_destroy();
 		$data['info']='Logout Successfully!';
 		$data['title']='VEHICLE LEASE MANAGEMENT SYSTEM';
-		$this->load->view('welcome_message',$data);
+		$this->load->view('logout',$data);
 		
 	}
 	

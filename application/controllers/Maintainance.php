@@ -60,9 +60,17 @@ class Maintainance extends CI_Controller {
 	
 	public function addRecord()
 	{
-		
-		
+		$data = array(
+            'veh_id' => $this->input->post('vid'),
+            'maint_type' => $this->input->post('maint_type'),
+            'cost' => $this->input->post('cost'),
+            'main_date'=>date('Y-m-d H:i:s'),
+        );
+		//Transfering data to Model
+        $this->Maintainance_model->saveMaintainenceData($data);
+        $data['message'] = 'Data Inserted Successfully';
 		$data['title']='Vehicle Maintainance';
+		$data['vid']=$this->input->post('vid');
 		$this->load->view('maintainance/add_maintainance',$data);
 		
 	}

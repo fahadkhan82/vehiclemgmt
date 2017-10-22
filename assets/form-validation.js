@@ -88,6 +88,16 @@ var FormValidation = function () {
 
                         required: true
                     },
+					
+					reg_no: {
+
+                        required: true
+                    },
+					
+					chasis_no: {
+
+                        required: true
+                    },
 
 
                 },

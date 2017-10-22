@@ -30,9 +30,9 @@ class Maintainance_model extends CI_Model {
 			
 		}
          
-		public function saveVehicletData($data){
+		public function saveMaintainenceData($data){
 			
-			$this->db->insert('vehicle',$data);
+			$this->db->insert('maintainance',$data);
 			
 		} 
 		

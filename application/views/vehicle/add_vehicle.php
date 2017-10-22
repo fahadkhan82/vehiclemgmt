@@ -134,6 +134,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										</select>  								
 										</div>
   							</div>
+							
+							<div class="control-group">
+  								<label class="control-label">Registration No<span class="required">*</span></label>
+  								<div class="controls">
+  									<input name="reg_no" id="reg_no" type="text" class="span6 m-wrap" data-required="1"/>
+  								</div>
+  							</div>
+							
+							<div class="control-group">
+  								<label class="control-label">Chasis No<span class="required">*</span></label>
+  								<div class="controls">
+  									<input name="chasis_no" id="chasis_no" type="text" class="span6 m-wrap" data-required="1"/>
+  								</div>
+  							</div>
   							
   							<div class="form-actions">
   								<button type="submit" class="btn btn-primary">Submit</button>
