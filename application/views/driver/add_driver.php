@@ -122,16 +122,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="control-group">
   								<label class="control-label">Permanent Address<span class="required">*</span></label>
   								<div class="controls">
-  									<input name="perma_address" id="perma_address" type="text" class="span6 m-wrap" data-required="1"/>
+  									<textarea name="perma_address" id="perma_address"  class="span6 m-wrap" data-required="1"/></textarea>
   								</div>
   							</div>
 							
-							<div class="control-group">
-  								<label class="control-label">Joining Date<span class="required">*</span></label>
-  								<div class="controls">
-  									<input name="join_date" id="join_date" type="text" class="span6 m-wrap" data-required="1"/>
-  								</div>
-  							</div>
+							   <div class="control-group">
+                                          <label class="control-label" for="date01">Joining Date</label>
+                                          <div class="controls">
+                                            <input type="text" class="input-xlarge datepicker" id="join_date" name="join_date" value="02/16/12">
+                                           
+                                          </div>
+                              </div>
 							
 							<div class="control-group">
   								<label class="control-label">Salary<span class="required">*</span></label>
@@ -179,5 +180,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
            
         </div>
         <!--/.fluid-container-->
+  <script>
 
+	
+
+        $(function() {
+            $(".datepicker").datepicker();
+           
+        });
+        </script>
 <?php $this->view('footer'); ?>
