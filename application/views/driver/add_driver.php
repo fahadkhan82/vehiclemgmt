@@ -60,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="block-content collapse in">
                                 <div class="span12">
 					<!-- BEGIN FORM-->
-					<form action="vehicle/saveVehicle" id="form_sample_1" class="form-horizontal" method="post">
+					<form action="driver/saveDriver" id="form_sample_1" class="form-horizontal" method="post">
 						<fieldset>
 							<div class="alert alert-error hide">
 								<button class="close" data-dismiss="alert"></button>
@@ -129,7 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							   <div class="control-group">
                                           <label class="control-label" for="date01">Joining Date</label>
                                           <div class="controls">
-                                            <input type="text" class="input-xlarge datepicker" id="join_date" name="join_date" value="02/16/12">
+                                            <input type="text" class="input-xlarge datepicker" id="join_date" name="join_date" value="01/01/2017">
                                            
                                           </div>
                               </div>

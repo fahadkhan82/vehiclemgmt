@@ -49,24 +49,25 @@ class Driver extends CI_Controller {
     {
 
         $data = array(
-            'cid' => $this->input->post('client'),
-            'model' => $this->input->post('model'),
-            'make' => $this->input->post('make'),
-            'year' => $this->input->post('year'),
-            'type' => $this->input->post('type'),
-			'engine' => $this->input->post('engine'),
-			'transmission' => $this->input->post('transmission'),
-			'reg_no' => $this->input->post('reg_no'),
-			'chasis_no' => $this->input->post('chasis_no'),
+            'fname' => $this->input->post('fname'),
+            'lname' => $this->input->post('lname'),
+            'city' => $this->input->post('city'),
+            'cnic' => $this->input->post('cnic'),
+            'age' => $this->input->post('age'),
+			'perma_address' => $this->input->post('perma_address'),
+			'join_date' => $this->input->post('join_date'),
+			'salary' => $this->input->post('salary'),
+			'mobile_no' => $this->input->post('mobile_no'),
+			'alternate_no' => $this->input->post('alternate_no'),
+			'emergency_no' => $this->input->post('emergency_no'),
+			'alternate_no' => $this->input->post('alternate_no'),
         );
 
         //Transfering data to Model
         $this->Driver_model->saveDrivertData($data);
         $data['message'] = 'Data Inserted Successfully';
-        $data['title']='Client Management';
-        //$data['result'] = $this->Driver_model->getClientsData();
-        $cid= $this->input->post('client');
-		$data['result'] = $this->Driver_model->getDriverList($cid);
+        $data['title']='Driver Management';
+        $data['result'] = $this->Driver_model->getDriverList();
 		$this->load->view('Driver/driver', $data);
 
     }

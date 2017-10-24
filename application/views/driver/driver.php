@@ -82,10 +82,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <td><?php echo $r->id; ?></td>
                                                 <td ><?php echo $r->fname; ?>&nbsp;<?php echo $r->lname; ?></td>
                                                 <td><?php echo $r->cnic; ?></td>
-											   <td><?php echo $r->mobile; ?></td>
+											   <td><?php echo $r->mobile_no; ?></td>
                                                 <td><?php echo $r->city; ?></td>
                                                
-                                                <td ><a href="<?php echo $r->tenure; ?>">View</a> | <a href="<?php echo $r->tenure; ?>">Edit</a> | <a href="<?php echo $r->tenure; ?>">Delete</a> </td>
+                                                <td ><a href="<?php echo $r->id; ?>">View</a> | <a href="<?php echo $r->id; ?>">Edit</a> | <a href="<?php echo $r->id; ?>">Delete</a> </td>
                                             </tr>
                                         <?php endforeach; ?>
                                         </tbody>
